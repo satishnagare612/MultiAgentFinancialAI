@@ -1,0 +1,7 @@
+{
+  "name": "Financial AI Report",
+  "description": "Production-grade Financial AI Report generator with deterministic projections, multi-agent RAG workflow, human-in-the-loop review, and report generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

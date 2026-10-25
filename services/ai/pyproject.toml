@@ -1,0 +1,54 @@
+[project]
+name = "financial-ai-service"
+version = "0.1.0"
+description = "FastAPI AI service powering Financial AI multi-agent orchestration"
+authors = [{ name = "AI Engineering Team", email = "ai@financial.internal" }]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.27.0",
+    "ruff>=0.7.0",
+    "mypy>=1.13.0",
+]
+
+[tool.poetry]
+packages = [{ include = "app" }]
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.3.0"
+pytest-asyncio = ">=0.24.0"
+httpx = ">=0.27.0"
+ruff = ">=0.7.0"
+mypy = ">=1.13.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+testpaths = ["tests"]
+asyncio_mode = "auto"
